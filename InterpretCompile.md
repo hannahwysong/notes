@@ -12,3 +12,4 @@ while an interpreter translates and executes code line by line during runtime\
 <p align="center">
 <img src="images/CompIntLang.png" alt="Venn Diag" width="500"/>
 </p>
+## The parts of a Language
