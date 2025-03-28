@@ -8,4 +8,7 @@ A **compiler** reads in files in one language and outputs files in another langu
 
 ### The Difference 
 A compiler translates the entire program into machine code before execution,\
-while an interpreter translates and executes code line by line during runtime
+while an interpreter translates and executes code line by line during runtime\
+<p align="center">
+<img src="images/CompIntLang.png" alt="Venn Diag" width="500"/>
+</p>
