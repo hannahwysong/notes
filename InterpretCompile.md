@@ -24,6 +24,10 @@ A scanner takes in a linear stream of chars and turns them into a **token**
 - **token** : smallest units of a program that have meaning to the compiler
 ### Parsing
 >Where syntax gets its grammar
+
 A **parser** uses tokens to build trees of nested grammar
+<p align="center">
+<img src="images/grammar.PNG" alt="implementation"/>
+</p>
 
-
+### Static Analysis
