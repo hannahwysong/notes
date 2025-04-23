@@ -16,7 +16,7 @@ A ***list*** is a common ADT for holding ordered data, having operations like ap
 
 A ***singly-linked list*** is a data structure for implementing a list ADT, where each node has data and a pointer to the next node\
 The singly-linked list append operation inserts a new node after the list's tail node. The append algorithm behavior differs if the list is empty versus not empty:
-  -Append to empty list: If the list's head is null, the list's head and tail are assigned with the new node.
-  -Append to non-empty list: If the list's head is not null, the tail node's next is first assigned with the new node, then the list's tail is assigned with the new node.
+-Append to empty list: If the list's head is null, the list's head and tail are assigned with the new node.
+-Append to non-empty list: If the list's head is not null, the tail node's next is first assigned with the new node, then the list's tail is assigned with the new node.
 
 
