@@ -19,5 +19,18 @@ The singly-linked list append operation inserts a new node after the list's tail
 - **Append to empty list**: If the list's head is `null`, the list's `head` and `tail` are assigned with the new node.
 - **Append to non-empty list**: If the list's head is not `null`, the `tail` node's `next` is first assigned with the new node, then the list's `tail` is assigned with the new node.
 
+Given a new node, the prepend operation for a singly-linked list inserts the new node before the list's head node. The prepend algorithm behavior differs if the list is empty versus not empty:
+- **Prepend to empty list**: If the list's head pointer is `null`, the list's `head` and `tail` pointers are assigned with the new node.
+- **Prepend to non-empty list**: If the list's head pointer is not `null`, the new node's `next` pointer is first assigned with the list's `head` node, then the list's `head` pointer is assigned with the new node.
 
+- **Linked list search**: Given a data value, the search algorithm returns the first node whose data matches the value, or `null` if no match is found.
+- The algorithm starts at the list's `head` and:
+  - Checks if the current node's data matches the value.
+  - If not, moves to the `next` node and repeats.
+- If the current node becomes `null`, the algorithm returns `null` (no match found).
 
+Given a new node, the insert-node-after operation for a singly-linked list inserts the new node after a provided existing list node.\
+CurrentNode is a pointer to an existing list node but can be null when inserting into an empty list. The insert-node-after algorithm considers three insertion scenarios:
+- **Insert as first node**: If the list's `head` is `null`, set both `head` and `tail` to the new node.
+- **Insert after tail node**: If the list is not empty and `currentNode` is the `tail`, set `tail.next` and `tail` to the new node.
+- **Insert in middle of list**: If the list is not empty and `currentNode` is not the `tail`, set the new node's `next` to `currentNode.next`, then set `currentNode.next` to the new node.
