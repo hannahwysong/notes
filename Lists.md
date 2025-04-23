@@ -151,7 +151,7 @@ Works for both **singly-linked** and **doubly-linked** lists.
 
 A doubly-linked list also supports a reverse traversal. A reverse traversal visits all nodes starting with the list's tail node and ending after visiting the list's head node.
 
-### Array-Based List (List ADT)
+## Array-Based List (List ADT)
 
 An **array-based list** implements the List ADT using an underlying array. It supports common operations like:
 - `append`
@@ -178,3 +178,43 @@ When an item is added and the list's **length equals the allocation size**, the 
 #### Performance:
 - The resize operation has a **runtime complexity of O(n)**,  
   where `n` is the number of elements in the list (due to copying).
+
+### Prepend Operation (Array-Based List)
+
+- Inserts a new item at the **start** of the list.
+- If `length == allocation size`, the array is **resized**.
+- All existing elements are **shifted one position up**.
+- The new item is inserted at **index 0**.
+
+#### Runtime Complexity:
+- **O(n)** — because all elements must be moved.
+
+---
+
+### InsertAt Operation (Array-Based List)
+
+- Inserts a new item at a specified **index**.
+- If `length == allocation size`, the array is **resized**.
+- Elements from the specified index to the end are **shifted up by one**.
+- The item is then inserted at the given index.
+
+#### Runtime Complexity:
+- **Best Case**: **O(1)** (inserting at the end of the list).
+- **Worst Case**: **O(n)** (inserting at the beginning or middle, requiring shifting).
+
+### Search Operation (Array-Based List)
+
+- Given an item, the `search` operation returns the **index** of the first matching item in the list, or `-1` if the item is not found.
+
+#### Runtime Complexity:
+- **Worst Case**: **O(n)** — if the item is at the end or not in the list.
+
+---
+
+### Remove-At Operation (Array-Based List)
+
+- Given an index `X`, the `removeAt` operation removes the item at that index.
+- After removal, all items **after index X** are shifted **down by one** position.
+
+#### Runtime Complexity:
+- **Worst Case**: **O(n)** — if the item is at the start, requiring shifting all elements.
