@@ -14,6 +14,7 @@ A ***list*** is a common ADT for holding ordered data, having operations like ap
 | IsEmpty()         | Returns true if list has no items                 | `list.IsEmpty()` → false                                             |
 | GetLength()       | Returns the number of items in the list          | `list.GetLength()` → 2                                               |
 
+
 A ***singly-linked list*** is a data structure for implementing a list ADT, where each node has data and a pointer to the next node\
 The singly-linked list append operation inserts a new node after the list's tail node. The append algorithm behavior differs if the list is empty versus not empty:
 - **Append to empty list**: If the list's head is `null`, the list's `head` and `tail` are assigned with the new node.
@@ -23,7 +24,7 @@ Given a new node, the prepend operation for a singly-linked list inserts the new
 - **Prepend to empty list**: If the list's head pointer is `null`, the list's `head` and `tail` pointers are assigned with the new node.
 - **Prepend to non-empty list**: If the list's head pointer is not `null`, the new node's `next` pointer is first assigned with the list's `head` node, then the list's `head` pointer is assigned with the new node.
 
-- **Linked list search**: Given a data value, the search algorithm returns the first node whose data matches the value, or `null` if no match is found.
+**Linked list search**: Given a data value, the search algorithm returns the first node whose data matches the value, or `null` if no match is found.
 - The algorithm starts at the list's `head` and:
   - Checks if the current node's data matches the value.
   - If not, moves to the `next` node and repeats.
