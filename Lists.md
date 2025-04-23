@@ -12,7 +12,7 @@ A ***list*** is a common ADT for holding ordered data, having operations like ap
 | Print()           | Prints list's items in order                      | `list.Print()` → outputs: 99, 77                                     |
 | Sort()            | Sorts list's items in ascending order            | `list.Sort()` → list: (77, 99)                                       |
 | IsEmpty()         | Returns true if list has no items                 | `list.IsEmpty()` → false                                             |
-| GetLength()       | Returns the number of items in the list          | `list.GetLength()` → 2                                               |
+| GetLength()       | Returns the number of items in the list          | `list.GetLength()` → 2                                               |\
 
 
 A ***singly-linked list*** is a data structure for implementing a list ADT, where each node has data and a pointer to the next node\
@@ -35,3 +35,12 @@ CurrentNode is a pointer to an existing list node but can be null when inserting
 - **Insert as first node**: If the list's `head` is `null`, set both `head` and `tail` to the new node.
 - **Insert after tail node**: If the list is not empty and `currentNode` is the `tail`, set `tail.next` and `tail` to the new node.
 - **Insert in middle of list**: If the list is not empty and `currentNode` is not the `tail`, set the new node's `next` to `currentNode.next`, then set `currentNode.next` to the new node.
+
+The `InsertAfter(int currentItem, int newItem)` function is used to insert a new item after a specified item in a singly-linked list implementation of a List ADT. Since the operation uses item values (not node references), it works as follows:
+
+1. **Search for Node**: Calls `Search()` to locate the node containing `currentItem`.
+2. **Allocate New Node**: If the node is found, a new node is created for `newItem`.
+3. **Insert Node**: Calls `InsertNodeAfter()` to insert the new node immediately after the located node.
+
+This approach maintains abstraction by working with data values rather than internal node pointers.
+
