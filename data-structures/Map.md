@@ -25,3 +25,18 @@ A **map** (also known as a **dictionary**) is an Abstract Data Type (ADT) that a
 | `Get(key)`        | Returns the value for the key, or `null` if the key doesn't exist          | `map.Get(5)` → `"apple"`<br>`map.Get(7)` → `null`<br>Map remains unchanged                 |
 | `Contains(key)`   | Returns `true` if the map contains the key, `false` otherwise              | `map.Contains(10)` → `true`<br>Map remains unchanged                                       |
 | `GetLength()`     | Returns the number of key-value pairs in the map                           | `map.GetLength()` → `3`<br>Map remains unchanged                                           |
+
+## Summary: Map ADT and Key Type Support
+
+When implementing a Map Abstract Data Type (ADT) that supports any key type, two key issues arise:
+
+1. **Non-integer keys are not supported.**
+2. **Arrays cannot be sized to support all possible integer keys.**
+
+### Solution: Hash Codes
+
+To handle non-integer key types, a **hash code** is used:
+- A **hash code** is a fixed-size, non-negative integer that aims to uniquely identify a key.
+- A **hash function** computes this hash code from a given key.
+- Hash functions are typically tailored to specific data types.
+
