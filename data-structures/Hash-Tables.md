@@ -178,3 +178,56 @@ This setup helps in efficiently managing and checking the state of each bucket d
 
 - Returns `true` if the item was successfully inserted.
 - Returns `false` if **all buckets are occupied** and no empty spot is found.
+
+The search algorithm uses the probing sequence until the key being searched for is found or an empty-since-start bucket is found.\
+The removal algorithm searches for the key to remove and, if found, marks the bucket as empty-after-removal.
+
+## Participation Activity 5.5.6: Choosing Good `c1` and `c2` for Quadratic Probing
+
+When implementing quadratic probing in a hash table:
+
+- Some choices for `c1` and `c2` can cause problems.
+  - Example: Choosing `c1 = 10` and `c2 = 10` for a table with 10 buckets will cause the probe to repeatedly compute the same index.
+- Important guideline: `c1` and `c2` should **not** be multiples of the number of buckets.
+
+### Simplified Formula
+Some implementations choose `c1 = 0` and `c2 = 1`, which simplifies the probing sequence formula to: index = (H + i^2) mod tablesize
+
+where:
+- `H` is the original hash value
+- `i` is the probe attempt number (0, 1, 2, ...)
+
+## 5.6 Pseudo-random Probing (Study Notes)
+
+- **Goal**: Avoid primary clustering by randomizing the probing order.
+
+- **Setup**:
+  - Create an `offsets` array of size `N - 1`.
+  - Fill with numbers `1` to `N-1`.
+  - Shuffle randomly.
+
+- **Probing formula**:
+  ```
+  probe = (home + offsets[i]) % N
+  ```
+  where `home = hash(k) = k % N`.
+
+- **Example (N = 10)**:
+  ```
+  offsets = [4, 7, 2, 9, 1, 8, 6, 3, 5]
+  k = 1088
+  home = 1088 % 10 = 8
+  ```
+
+- **Probing sequence**:
+  ```
+  probe_0 = (8 + 4) % 10 = 2
+  probe_1 = (8 + 7) % 10 = 5
+  probe_2 = (8 + 2) % 10 = 0
+  probe_3 = (8 + 9) % 10 = 7
+  probe_4 = (8 + 1) % 10 = 9
+  ...
+
+- **Important**:
+  - All buckets are eventually probed.
+  - If `offsets` were not shuffled, probing would behave like **linear probing**.
